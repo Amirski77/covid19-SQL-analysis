@@ -185,43 +185,10 @@ covid19-sql-analysis/
        ├── top10_infection_rate.sql
        ├── vaccination_rankings.sql
        └── positive_test_rate.sql
+```
 
----
 
-## 📊 Analysis Breakdown
-
-###  Data Cleaning
-
-Before any analysis, the data was validated and cleaned:
-
-| Task | Approach | SQL Concepts |
-|------|----------|-------------|
-| Duplicate detection | `GROUP BY` + `HAVING COUNT(*) > 1` | Aggregation, filtering |
-| ISO code validation | `LENGTH()` filter for non-3-char codes | String functions |
-| Island country search | `LIKE '%Islands%'` pattern matching | Wildcards |
-| Name cleanup | `REGEXP_REPLACE` to strip parenthetical text | Regex |
-| NULL handling | `IFNULL()` with discussion of why replacing NULLs with 0 is statistically misleading | Data integrity |
-
-Replacing `NULL` with `0` would distort statistics — `NULL` means "no data recorded," while `0` means "zero cases confirmed." These are fundamentally different.
-
----
-
-###  Deep Dive Analysis
-
-| Question | Technique | Highlight |
-|----------|-----------|-----------|
-| Q1: Highest case fatality | Multi-table `JOIN`, computed columns | Identified countries with >50% fatality rates |
-| Q2: Per-country rates | `SUM` + `GROUP BY` across 3 tables | Ranked all countries by infection penetration |
-| Q3: Global aggregates | Subquery with `MAX(population)` to deduplicate | Prevented population double-counting |
-| Q4: Treatment success | `FIRST_VALUE` / `LAST_VALUE` window functions | Compared first vs. last ICU observation |
-| Q5: UK monthly overview | 4-table `LEFT JOIN`, `FORMAT_DATE` | Full 2021 monthly health dashboard |
-| Q6: Daily trends | `LAG`, `CASE`, CTEs | Automated trend classification system |
-| Q7: Top country by day | `RANK() OVER (PARTITION BY date)` | March 2020 daily leader identification |
-| Q8: Top 25 mortality | CTE + `ORDER BY` mortality rate | Population-adjusted mortality ranking |
-
----
-
-###  Global Forecasting
+## 🥇 Gold — Global Forecasting
 
 **Question 9: 5-Day COVID Forecast for Kazakhstan**
 
@@ -296,5 +263,5 @@ Four additional self-designed analyses with visualizations:
 
 Feel free to reach out if you have questions about this analysis or want to discuss the methodology!
 
-- LinkedIn: www.linkedin.com/in/amir-r-673789203
-- Email: amirrashidov14@gmail.com
+ LinkedIn: www.linkedin.com/in/amir-r-673789203
+ Email: amirrashidov14@gmail.com
