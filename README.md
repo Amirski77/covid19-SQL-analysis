@@ -1,6 +1,5 @@
-# covid19-SQL-analysis
-**Exploratory data analysis of the global COVID-19 pandemic using SQL (Google BigQuery), covering data cleaning, multi-table joins, window functions, and pandemic growth forecasting.**
 # 🦠 COVID-19 Global Data Analysis (SQL)
+**Exploratory data analysis of the global COVID-19 pandemic using SQL (Google BigQuery), covering data cleaning, multi-table joins, window functions, and pandemic growth forecasting.**
 
 ## 📋 Table of Contents
 
