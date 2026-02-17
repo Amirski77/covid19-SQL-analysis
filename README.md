@@ -264,3 +264,4 @@ Feel free to reach out if you have questions about this analysis or want to disc
 
  LinkedIn: www.linkedin.com/in/amir-r-673789203
  Email: amirrashidov14@gmail.com
+ Open to internships and networking. Feel free to connect!
