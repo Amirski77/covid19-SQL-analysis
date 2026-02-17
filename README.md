@@ -57,7 +57,7 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 <details>
 <summary>Q1: Highest Case Fatality Rate</summary>
 
-![Case Fatality](<img width="672" height="372" alt="q1_case_fatality" src="https://github.com/user-attachments/assets/c65123e3-1e0a-4ab2-b431-38f6b8bb1c20" />
+[<img width="672" height="372" alt="q1_case_fatality" src="https://github.com/user-attachments/assets/c65123e3-1e0a-4ab2-b431-38f6b8bb1c20" />](https://github.com/Amirski77/covid19-SQL-analysis/blob/main/q1_case_fatality.png.png)
 )
 </details>
 
