@@ -34,31 +34,8 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 ---
 
 ## 🗄 Database Schema
+<img width="782" height="606" alt="Database Schema" src="https://github.com/user-attachments/assets/9f5f6ba9-afcc-4775-b4e6-65816af21083" />
 
-The dataset consists of **6 related tables**, all joined via `iso_code` and `date`:
-┌────────────────┐     ┌────────────────┐     ┌───────────────────┐
-│    Regions     │     │     Cases      │     │    Demography     │
-├────────────────┤     ├────────────────┤     ├───────────────────┤
-│ iso_code    PK │◄───►│ iso_code    FK │◄───►│ iso_code       FK │
-│ continent      │     │ date        PK │     │ population        │
-│ location       │     │ total_cases    │     │ median_age        │
-└────────────────┘     │ new_cases      │     │ gdp_per_capita    │
-                       │ total_deaths   │     │ life_expectancy   │
-                       │ new_deaths     │     └───────────────────┘
-                       └────────────────┘
-┌────────────────┐     ┌────────────────┐     ┌───────────────────────┐
-│    Hospital    │     │     Tests      │     │     Vaccinations      │
-├────────────────┤     ├────────────────┤     ├───────────────────────┤
-│ iso_code    FK │     │ iso_code    FK │     │ iso_code           FK │
-│ date        FK │     │ date        FK │     │ date               FK │
-│ icu_patients   │     │ total_tests    │     │ total_vaccinations    │
-│ hosp_patients  │     │ new_tests      │     │ people_vaccinated     │
-│ weekly_icu_    │     │ positive_rate  │     │ people_fully_vacc     │
-│  admissions    │     │ tests_units    │     │ new_vaccinations      │
-└────────────────┘     └────────────────┘     └───────────────────────┘
-```
-
----
 
 ## 🔑 Key Findings
 
@@ -80,7 +57,8 @@ The dataset consists of **6 related tables**, all joined via `iso_code` and `dat
 <details>
 <summary>Q1: Highest Case Fatality Rate</summary>
 
-![Case Fatality](screenshots/q1_case_fatality.png)
+![Case Fatality](<img width="672" height="372" alt="q1_case_fatality" src="https://github.com/user-attachments/assets/c65123e3-1e0a-4ab2-b431-38f6b8bb1c20" />
+)
 </details>
 
 <details>
@@ -166,14 +144,12 @@ The dataset consists of **6 related tables**, all joined via `iso_code` and `dat
 ---
 
 ## 📁 Project Structure
-
-```
 covid19-sql-analysis/
 │
-├── README.md                          # Project documentation
+├── README.md                          # Project documentation 
 │
 ├── sql/
-│   ├── Data Cleaning/
+│   ├── bronze/
 │   │   ├── 01_check_duplicates.sql    # Duplicate row detection
 │   │   ├── 02_validate_iso_codes.sql  # ISO code length validation
 │   │   ├── 03_find_islands.sql        # Filter countries containing "Islands"
@@ -181,7 +157,7 @@ covid19-sql-analysis/
 │   │   ├── 05_data_types_review.sql   # Data type inspection & notes
 │   │   └── 06_handle_nulls.sql        # NULL handling strategy
 │   │
-│   ├──  Deep Dive Analysis/
+│   ├── silver/
 │   │   ├── 01_case_fatality_rate.sql           # Q1: Highest death probability
 │   │   ├── 02_infection_death_rate_country.sql # Q2: Per-country infection & death rates
 │   │   ├── 03_global_infection_death_rate.sql  # Q3: Worldwide aggregates
@@ -191,7 +167,7 @@ covid19-sql-analysis/
 │   │   ├── 07_top_countries_march_2020.sql     # Q7: Ranked countries by daily cases
 │   │   └── 08_top25_mortality.sql              # Q8: Top 25 countries by mortality rate
 │   │
-│   ├──Global Forecasting/
+│   ├── gold/
 │   │   └── 09_kazakhstan_forecast.sql          # Q9: 5-day case forecast with growth factor
 │   │
 │   └── custom/
@@ -202,7 +178,6 @@ covid19-sql-analysis/
 │
 └── docs/
     └── schema.md                               # Detailed table descriptions
-```
 
 ---
 
@@ -315,4 +290,4 @@ Four additional self-designed analyses with visualizations:
 Feel free to reach out if you have questions about this analysis or want to discuss the methodology!
 
  - LinkedIn: www.linkedin.com/in/amir-r-673789203
- - Email: your.email@example.com --> amirrashidov14@gmail.com
+ - Email: amirrashidov14@gmail.com
