@@ -1,5 +1,6 @@
-## 🦠 COVID-19 Global Data Analysis (SQL)
+# covid19-SQL-analysis
 **Exploratory data analysis of the global COVID-19 pandemic using SQL (Google BigQuery), covering data cleaning, multi-table joins, window functions, and pandemic growth forecasting.**
+# 🦠 COVID-19 Global Data Analysis (SQL)
 
 ## 📋 Table of Contents
 
@@ -8,10 +9,10 @@
 - [Key Findings](#-key-findings)
 - [Project Structure](#-project-structure)
 - [Analysis Breakdown](#-analysis-breakdown)
-  - [Data Cleaning](#-bronze--data-cleaning)
-  - [Deep Dive Analysis](#-silver--deep-dive-analysis)
-  - [Global Forecasting](#-gold--global-forecasting)
-  - [Custom Research Questions](#-custom-research-questions)
+ - [Data Cleaning](#-bronze--data-cleaning)
+ - [Deep Dive Analysis](#-silver--deep-dive-analysis)
+ - [Global Forecasting](#-gold--global-forecasting)
+ - [Custom Research Questions](#-custom-research-questions)
 - [SQL Techniques Used](#-sql-techniques-used)
 - [How to Run](#-how-to-run)
 - [Data Source](#-data-source)
@@ -63,43 +64,48 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 <details>
 <summary>Q2: Infection & Death Rate by Country</summary>
 
-![Infection Rate](screenshots/q2_infection_rate.png)
+![Infection Rate](q2_infection_rate.png)
 </details>
 
 <details>
 <summary>Q3: Global Infection & Death Rate</summary>
 
-![Global Rate](screenshots/q3_global_rate.png)
+[<img width="885" height="64" alt="image" src="https://github.com/user-attachments/assets/d7b94b7d-3318-4a7f-838b-ad9e56df8251" />
+](https://github.com/Amirski77/covid19-SQL-analysis/blob/main/Global%20Rate.png?raw=true)
 </details>
 
 <details>
 <summary>Q4: Countries That Reduced ICU Burden</summary>
 
-![Treatment Success](screenshots/q4_treatment.png)
+[<img width="1104" height="471" alt="image" src="https://github.com/user-attachments/assets/06d88abc-b7e1-48f3-85c2-32bf8f142748" />
+])
 </details>
 
 <details>
 <summary>Q5: UK Monthly Dashboard (2021)</summary>
 
-![UK Dashboard](screenshots/q5_uk_monthly.png)
+[<img width="751" height="108" alt="image" src="https://github.com/user-attachments/assets/bd0327e3-ccd6-4a66-b51c-baa74bf56583" />
 </details>
 
 <details>
 <summary>Q6: Daily Trend Analysis</summary>
 
-![Daily Trends](screenshots/q6_trends.png)
+<img width="1194" height="469" alt="image" src="https://github.com/user-attachments/assets/835e5063-1f86-4321-b1b2-dea0d708cb5a" />
+
 </details>
 
 <details>
 <summary>Q7: Top Country per Day — March 2020</summary>
 
-![March 2020](screenshots/q7_march_2020.png)
+<img width="798" height="407" alt="image" src="https://github.com/user-attachments/assets/601d3c0b-29ff-428f-83c7-39df5037c2bf" />
+
 </details>
 
 <details>
 <summary>Q8: Top 25 Mortality Rate</summary>
 
-![Mortality](screenshots/q8_mortality.png)
+<img width="631" height="586" alt="image" src="https://github.com/user-attachments/assets/2f360c45-8e9f-4543-9ced-dc285466e124" />
+
 </details>
 
 ### Gold — Forecasting
@@ -107,7 +113,8 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 <details>
 <summary>Q9: Kazakhstan 5-Day Forecast</summary>
 
-![Kazakhstan Forecast](screenshots/q9_forecast.png)
+<img width="1258" height="205" alt="image" src="https://github.com/user-attachments/assets/18e2ef2f-8486-49cb-96cf-444748b7dd50" />
+
 </details>
 
 ### Custom Research
@@ -115,7 +122,8 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 <details>
 <summary>Italy: Top 5 Deadliest Months</summary>
 
-![Italy Deaths](screenshots/custom_italy.png)
+<img width="896" height="197" alt="image" src="https://github.com/user-attachments/assets/fc78cdb4-8aef-456a-8e8c-4fc08e5bed74" />
+
 
 > November and December 2020 were the deadliest months for Italy, each exceeding 18,000 deaths.
 </details>
@@ -123,19 +131,22 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 <details>
 <summary>Top 10 Countries by Infection Rate</summary>
 
-![Infection Rate](screenshots/custom_infection.png)
+<img width="682" height="327" alt="image" src="https://github.com/user-attachments/assets/264de9e6-b635-45ec-937b-ff0a92b1fa28" />
+
 </details>
 
 <details>
 <summary>Vaccination Rankings</summary>
 
-![Vaccination](screenshots/custom_vaccination.png)
+<img width="746" height="334" alt="image" src="https://github.com/user-attachments/assets/69ad81d8-13d1-46b5-89bc-e87e96ad66ae" />
+
 </details>
 
 <details>
 <summary>Top 10 by Positive Test Rate</summary>
 
-![Positive Rate](screenshots/custom_positive_rate.png)
+<img width="771" height="408" alt="image" src="https://github.com/user-attachments/assets/90d2a8dc-f8e8-4551-b8b0-424a49b5c60c" />
+
 
 > Brazil ~78%, Iran ~39% — high positive rates indicate severe under-testing, with tests primarily given to symptomatic patients.
 </details>
@@ -143,40 +154,37 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 ---
 
 ## 📁 Project Structure
+
+```text
 covid19-sql-analysis/
-│
-├── README.md                          # Project documentation 
-│
-├── sql/
-│   ├── bronze/
-│   │   ├── 01_check_duplicates.sql    # Duplicate row detection
-│   │   ├── 02_validate_iso_codes.sql  # ISO code length validation
-│   │   ├── 03_find_islands.sql        # Filter countries containing "Islands"
-│   │   ├── 04_clean_country_names.sql # Remove parenthetical text from names
-│   │   ├── 05_data_types_review.sql   # Data type inspection & notes
-│   │   └── 06_handle_nulls.sql        # NULL handling strategy
-│   │
-│   ├── silver/
-│   │   ├── 01_case_fatality_rate.sql           # Q1: Highest death probability
-│   │   ├── 02_infection_death_rate_country.sql # Q2: Per-country infection & death rates
-│   │   ├── 03_global_infection_death_rate.sql  # Q3: Worldwide aggregates
-│   │   ├── 04_treatment_success.sql            # Q4: ICU improvement by country
-│   │   ├── 05_uk_monthly_overview.sql          # Q5: UK 2021 monthly breakdown
-│   │   ├── 06_daily_trend_analysis.sql         # Q6: Day-over-day trend classification
-│   │   ├── 07_top_countries_march_2020.sql     # Q7: Ranked countries by daily cases
-│   │   └── 08_top25_mortality.sql              # Q8: Top 25 countries by mortality rate
-│   │
-│   ├── gold/
-│   │   └── 09_kazakhstan_forecast.sql          # Q9: 5-day case forecast with growth factor
-│   │
-│   └── custom/
-│       ├── italy_deadliest_months.sql          # Top 5 deadliest months in Italy
-│       ├── top10_infection_rate.sql             # Countries with highest infection %
-│       ├── vaccination_rankings.sql            # Countries ranked by full vaccination
-│       └── positive_test_rate.sql              # Top 10 countries by positive rate
-│
-└── docs/
-    └── schema.md                               # Detailed table descriptions
+├── README.md                  # Project documentation
+├── screenshots/               # Visualizations for the README
+├── docs/
+│   └── schema.md              # Database schema and details
+└── sql/                       # Organized SQL queries
+   ├── bronze/                # Data cleaning & validation
+   │   ├── 01_check_duplicates.sql
+   │   ├── 02_validate_iso_codes.sql
+   │   ├── 03_find_islands.sql
+   │   ├── 04_clean_country_names.sql
+   │   ├── 05_data_types_review.sql
+   │   └── 06_handle_nulls.sql
+   ├── silver/                # Deep dive analysis
+   │   ├── 01_case_fatality_rate.sql
+   │   ├── 02_infection_death_rate_country.sql
+   │   ├── 03_global_infection_death_rate.sql
+   │   ├── 04_treatment_success.sql
+   │   ├── 05_uk_monthly_overview.sql
+   │   ├── 06_daily_trend_analysis.sql
+   │   ├── 07_top_countries_march_2020.sql
+   │   └── 08_top25_mortality.sql
+   ├── gold/                  # Forecasting & Advanced Logic
+   │   └── 09_kazakhstan_forecast.sql
+   └── custom/                # Additional hypothesis testing
+       ├── italy_deadliest_months.sql
+       ├── top10_infection_rate.sql
+       ├── vaccination_rankings.sql
+       └── positive_test_rate.sql
 
 ---
 
@@ -194,7 +202,7 @@ Before any analysis, the data was validated and cleaned:
 | Name cleanup | `REGEXP_REPLACE` to strip parenthetical text | Regex |
 | NULL handling | `IFNULL()` with discussion of why replacing NULLs with 0 is statistically misleading | Data integrity |
 
- Replacing `NULL` with `0` would distort statistics — `NULL` means "no data recorded," while `0` means "zero cases confirmed." These are fundamentally different.
+Replacing `NULL` with `0` would distort statistics — `NULL` means "no data recorded," while `0` means "zero cases confirmed." These are fundamentally different.
 
 ---
 
@@ -288,5 +296,5 @@ Four additional self-designed analyses with visualizations:
 
 Feel free to reach out if you have questions about this analysis or want to discuss the methodology!
 
- - LinkedIn: www.linkedin.com/in/amir-r-673789203
- - Email: amirrashidov14@gmail.com
+- LinkedIn: www.linkedin.com/in/amir-r-673789203
+- Email: amirrashidov14@gmail.com
