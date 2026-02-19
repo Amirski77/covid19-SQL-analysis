@@ -1,7 +1,7 @@
-# 🦠 COVID-19 Global Data Analysis (SQL)
+#  COVID-19 Global Data Analysis (SQL)
 **Exploratory data analysis of the global COVID-19 pandemic using SQL (Google BigQuery), covering data cleaning, multi-table joins, window functions, and pandemic growth forecasting.**
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Database Schema](#-database-schema)
@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project analyzes real-world COVID-19 data provided by [Our World in Data](https://ourworldindata.org/coronavirus) to uncover patterns in infection rates, mortality, vaccination progress, and hospital capacity across countries and continents.
 
@@ -32,11 +32,11 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 
 ---
 
-## 🗄 Database Schema
+##  Database Schema
 <img width="782" height="606" alt="Database Schema" src="https://github.com/user-attachments/assets/9f5f6ba9-afcc-4775-b4e6-65816af21083" />
 
 
-## 🔑 Key Findings
+##  Key Findings
 
 - **Case Fatality Rate:** Identified countries with the highest probability of death among confirmed cases, revealing stark differences in healthcare outcomes.
 - **Global Infection/Death Rates:** Computed worldwide aggregates using subquery-based population deduplication to avoid double-counting.
@@ -49,7 +49,7 @@ This project analyzes real-world COVID-19 data provided by [Our World in Data](h
 
 ---
 
-## 📸 Query Results
+##  Query Results
 
 ### Silver — Deep Analysis
 
@@ -187,7 +187,7 @@ covid19-sql-analysis/
 ```
 
 
-## 🥇 Gold — Global Forecasting
+##  Gold — Global Forecasting
 
 **Question 9: 5-Day COVID Forecast for Kazakhstan**
 
@@ -205,7 +205,7 @@ Raw Data → Growth Factor Calculation → Outlier Filtering → Rolling Average
 
 ---
 
-### 🔬 Custom Research Questions
+###  Custom Research Questions
 
 Four additional self-designed analyses with visualizations:
 
@@ -220,7 +220,7 @@ Four additional self-designed analyses with visualizations:
 
 ---
 
-## 🛠 SQL Techniques Used
+##  SQL Techniques Used
 
 | Category | Techniques |
 |----------|-----------|
@@ -235,7 +235,7 @@ Four additional self-designed analyses with visualizations:
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 1. **Platform:** Google BigQuery (free tier available)
 2. **Dataset:** Import the COVID-19 dataset from [Our World in Data](https://ourworldindata.org/coronavirus)
@@ -250,7 +250,7 @@ Four additional self-designed analyses with visualizations:
 
 ---
 
-## 📖 Data Source
+##  Data Source
 
 - **Provider:** [Our World in Data — COVID-19 Dataset](https://ourworldindata.org/coronavirus)
 - **Tables:** Cases, Demography, Hospital, Regions, Tests, Vaccinations
@@ -258,7 +258,7 @@ Four additional self-designed analyses with visualizations:
 
 ---
 
-## 📬 Contact
+##  Contact
 
 Feel free to reach out if you have questions about this analysis or want to discuss the methodology!
 
